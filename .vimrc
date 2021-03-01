@@ -76,6 +76,7 @@ colorscheme gruvbox
 set background=dark
 
 " ------------ Mappings -------------------
+let mapleader = ";"
 
 " shift to normal mode
 inoremap jk <esc>
@@ -94,6 +95,9 @@ nnoremap <right> <C-w>l
 nnoremap <left> <C-w>h
 nnoremap <up> <C-w>k
 nnoremap <down> <C-w>j
+
+" send vim to background, switch to terminal
+nnoremap <leader>b <C-z>
 
 " delete whole word instead of a character when backspace is pressed
 " TODO: this mapping isn't working as expected :( #fixit
