@@ -12,10 +12,7 @@ set nocompatible
 syntax on
 set number
 set nowrap
-
-filetype on
-" enable loading indent file for filetype
-filetype plugin indent on   
+set scrolloff=4
 
 set tabstop=2 softtabstop=2
 set shiftwidth=2
@@ -41,8 +38,6 @@ set incsearch
 set ignorecase
 set smartcase
 
-set colorcolumn=80
-highlight Normal ctermbg=1  guibg=lightgrey
 
 " ---------------- Plugins -------------------
 
@@ -63,6 +58,9 @@ Plug 'vim-scripts/AutoComplPop'
 " python code formatter
 Plug 'psf/black', {'branch': 'stable'}
 
+" test runner
+Plug 'vim-test/vim-test'
+
 " ColorSchemes
 Plug 'danwagnerco/tomorrow-theme', {'rtp': 'vim'}
 Plug 'gruvbox-community/gruvbox'
@@ -75,6 +73,9 @@ call plug#end()
 colorscheme gruvbox
 set background=dark
 
+set colorcolumn=80
+highlight Normal guibg=black
+
 " ------------ Mappings -------------------
 let mapleader = ";"
 
@@ -84,11 +85,15 @@ inoremap jk <esc>
 " put current line in center of screen
 nnoremap <space> zz
 
+" test runner
+nmap <silent> <Leader>s :TestSuite<CR>
+nmap <silent> <Leader>f :TestFile<CR>
+
 " move current line up
-nnoremap <up> dd<up>P
+nnoremap <up> ddkP
 
 " move current line down
-nnoremap <down> ddp
+nnoremap <down> ddjp
 
 " move between splits
 nnoremap <right> <C-w>l
@@ -103,6 +108,10 @@ nnoremap <leader>b <C-z>
 " TODO: this mapping isn't working as expected :( #fixit
 inoremap <BS> <C-w>
 
+
+filetype on
+" enable loading indent file for filetype
+filetype plugin indent on   
 
 " ------------ Autocommands -------------------
 
