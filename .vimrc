@@ -77,13 +77,13 @@ set colorcolumn=80
 highlight Normal guibg=black
 
 " ------------ Mappings -------------------
-let mapleader = ";"
+let mapleader = " "
 
 " shift to normal mode
 inoremap jk <esc>
 
 " put current line in center of screen
-nnoremap <space> zz
+nnoremap <Leader>c zz
 
 " test runner
 nmap <silent> <Leader>s :TestSuite<CR>
