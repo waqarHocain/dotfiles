@@ -85,15 +85,12 @@ inoremap jk <esc>
 " put current line in center of screen
 nnoremap <Leader>c zz
 
+" switch to last opened file
+nnoremap <Leader><tab> <C-^>
+
 " test runner
 nmap <silent> <Leader>s :TestSuite<CR>
 nmap <silent> <Leader>f :TestFile<CR>
-
-" move current line up
-nnoremap <up> ddkP
-
-" move current line down
-nnoremap <down> ddjp
 
 " move between splits
 nnoremap <right> <C-w>l
@@ -106,7 +103,7 @@ nnoremap <leader>b <C-z>
 
 " delete whole word instead of a character when backspace is pressed
 " TODO: this mapping isn't working as expected :( #fixit
-inoremap <BS> <C-w>
+" inoremap <BS> <C-w>
 
 
 filetype on
