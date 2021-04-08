@@ -58,6 +58,13 @@ Plug 'vim-scripts/AutoComplPop'
 " python code formatter
 Plug 'psf/black', {'branch': 'stable'}
 
+" auto close brackets (), {}, <> etc
+Plug 'raimondi/delimitmate'
+
+" syntax highlighting for JS and JSX
+Plug 'pangloss/vim-javascript'
+Plug 'maxmellon/vim-jsx-pretty'
+
 " test runner
 Plug 'vim-test/vim-test'
 
@@ -69,7 +76,7 @@ Plug 'rakr/vim-one'
 call plug#end()
 
 " Use colorscheme
-"colorscheme Tomorrow-Night-Bright
+" colorscheme Tomorrow-Night-Bright
 colorscheme gruvbox
 set background=dark
 
@@ -91,6 +98,9 @@ nnoremap <Leader><tab> <C-^>
 " test runner
 nmap <silent> <Leader>s :TestSuite<CR>
 nmap <silent> <Leader>f :TestFile<CR>
+nmap <silent> <Leader>l :TestLast<CR>
+nmap <silent> <Leader>n :TestNearest<CR>
+nmap <silent> <Leader>V :TestVisit<CR>
 
 " move between splits
 nnoremap <right> <C-w>l
