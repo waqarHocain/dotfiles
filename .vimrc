@@ -83,6 +83,10 @@ set background=dark
 set colorcolumn=80
 highlight Normal guibg=black
 
+" -------- Plugin Specific ---------------
+" Ctrl-p: ignore node_modules, .git dirs
+let g:ctrlp_custom_ignore = 'node_modules\|\.git'
+
 " ------------ Mappings -------------------
 let mapleader = " "
 
