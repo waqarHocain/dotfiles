@@ -25,7 +25,7 @@ set smartindent
 set completeopt=menuone,longest
 
 " copy to  system clipboard when yanking
-set clipboard=unnamed
+set clipboard=unnamedplus
 
 set splitbelow
 set splitright
