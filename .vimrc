@@ -61,6 +61,11 @@ Plug 'psf/black', {'branch': 'stable'}
 " auto close brackets (), {}, <> etc
 Plug 'raimondi/delimitmate'
 
+" JS/HTML code formatter
+Plug 'prettier/vim-prettier', {
+  \ 'do': 'npm install',
+  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
+
 " syntax highlighting for JS and JSX
 Plug 'pangloss/vim-javascript'
 Plug 'maxmellon/vim-jsx-pretty'
@@ -131,3 +136,7 @@ autocmd filetype python set tabstop=4 softtabstop=4 shiftwidth=4
 
 " format python file using Black formatter
 autocmd BufWritePre *.py execute ':Black'
+
+" format js/html using prettier
+let g:prettier#autoformat = 0
+autocmd BufWritePre *.js,*.jsx,*.html,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue PrettierAsync
