@@ -20,10 +20,6 @@ set expandtab
 set smarttab
 set smartindent
 
-" Show popup even when only 1 match, also select the longest
-" word by default 
-set completeopt=menuone,longest
-
 " copy to  system clipboard when yanking
 set clipboard=unnamedplus
 
@@ -52,8 +48,8 @@ Plug 'ctrlpvim/ctrlp.vim'
 " change cursor in insert mode
 Plug 'wincent/terminus'
 
-" auto complete popup
-Plug 'vim-scripts/AutoComplPop'
+" auto complete 
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " python code formatter
 Plug 'psf/black', {'branch': 'stable'}
@@ -72,6 +68,9 @@ Plug 'maxmellon/vim-jsx-pretty'
 
 " test runner
 Plug 'vim-test/vim-test'
+
+" load local vimrc files (named '.lvimrc' by default)
+Plug 'embear/vim-localvimrc'
 
 " ColorSchemes
 Plug 'danwagnerco/tomorrow-theme', {'rtp': 'vim'}
@@ -119,6 +118,10 @@ nnoremap <down> <C-w>j
 
 " send vim to background, switch to terminal
 nnoremap <leader>b <C-z>
+
+" Make <Enter> auto-select the first completion item
+inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
+                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
 " delete whole word instead of a character when backspace is pressed
 " TODO: this mapping isn't working as expected :( #fixit
