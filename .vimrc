@@ -34,6 +34,9 @@ set incsearch
 set ignorecase
 set smartcase
 
+" Always show signcolumn  on left
+set signcolumn=yes
+
 
 " ---------------- Plugins -------------------
 
@@ -56,6 +59,9 @@ Plug 'psf/black', {'branch': 'stable'}
 
 " auto close brackets (), {}, <> etc
 Plug 'raimondi/delimitmate'
+"
+" auto close html tags
+Plug 'alvan/vim-closetag'
 
 " JS/HTML code formatter
 Plug 'prettier/vim-prettier', {
