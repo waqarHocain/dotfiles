@@ -20,6 +20,8 @@ set expandtab
 set smarttab
 set smartindent
 
+set nohls
+
 " copy to  system clipboard when yanking
 set clipboard=unnamedplus
 
@@ -34,8 +36,8 @@ set incsearch
 set ignorecase
 set smartcase
 
-" Always show signcolumn  on left
-set signcolumn=yes
+" Show signcolumn in number column, if there's any
+set signcolumn=number
 
 
 " ---------------- Plugins -------------------
